@@ -1,0 +1,7 @@
+<div class="toastWrapper">
+    <div *ngFor="let toast of toasts" class="toastContainer {{cssClass(toast)}} mb-2">
+        <div class="infoBox"><i class="{{iconClass(toast)}}"></i></div>
+        <span class="toastText">{{toast.message}}</span>
+        <div class="toastClose"><i class="fas fa-times" (click)="removeToast(toast)"></i></div>
+    </div>
+</div>

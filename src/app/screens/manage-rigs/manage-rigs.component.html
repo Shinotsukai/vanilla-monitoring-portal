@@ -1,0 +1,28 @@
+<section class="section is-main-section">
+
+    <div class="level">
+        <div class="level-left"></div>
+        <div class="level-right">
+            <div class="level-item">
+                <div class="button is-info" (click)="testModal()">
+                    <span class="mr-2"><i class="fas fa-plus"></i></span>
+                    <span>Add Room</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<app-card-tile>
+    <app-datatable [dataSource]="rigData" [settings]="rigSettings" [rowButtons]="rigButtons"></app-datatable>
+</app-card-tile>
+
+</section>
+
+<app-modal *ngIf="showModal" [show]="showModal" title="Add New Rig" (closed)="showModal = !showModal" (saved)="testSave()" [showFooter]="true">
+    <app-add-rig-screen></app-add-rig-screen>
+</app-modal>
+
+<app-modal *ngIf="showEditModal" [show]="showEditModal" title="Edit Rig" (closed)="showEditModal = !showEditModal" (saved)="updateRigDetails()" [showFooter]="true">
+    <app-edit-rig-screen [record]="selectedRig"></app-edit-rig-screen>
+</app-modal>

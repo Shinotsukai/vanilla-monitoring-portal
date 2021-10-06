@@ -1,0 +1,77 @@
+<table class="table is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th *ngFor="let map of primaryColumnMap">{{ map.header }}</th>
+      <th *ngIf="rowButtons.length" class="is-right"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <ng-container *ngFor="let record of dataSource; index as i">
+    <tr (click)="toggleRow(i)">
+      <td
+        *ngFor="let map of primaryColumnMap"
+        [id]="map.header"
+        [appStyleCell]="record[map.primaryKey]"
+        [key]="map.primaryKey"
+        
+      >
+        {{ record[map.primaryKey] | cellFormat: map.format:map.nested }}
+      </td>
+      <td *ngIf="rowButtons.length">
+        <div class="buttons is-right">
+        <button
+          *ngFor="let item of rowButtons"
+          (click)="
+            $event.stopPropagation();
+            buttonClick(record, item.func, item.params)
+          "
+          class="{{ item.class }} button is-small"
+        >
+          {{ item.title }}
+        </button>
+        </div>
+      </td>
+    </tr>
+    <tr *ngIf="childKey" [style.display]="show[i] ? 'table-row' : 'none'">
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th *ngFor="let expandedMap of expandedColumnMap">
+                {{ expandedMap.header }}
+              </th>
+              <th *ngIf="expandedRowButtons.length">
+
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let child of record[childKey]">
+              <td
+                *ngFor="let childMap of expandedColumnMap"
+                [id]="childMap.header"
+                [appStyleCell]="record[childMap.primaryKey]"
+                [key]="childMap.primaryKey"
+              >
+                {{ child[childMap.primaryKey] | cellFormat: childMap.format }}
+              </td>
+              <td *ngIf="expandedRowButtons.length">
+                <button
+                  *ngFor="let itemExpanded of expandedRowButtons"
+                  (click)="
+                    $event.stopPropagation();
+                    buttonClick(child, itemExpanded.func, itemExpanded.params)
+                  "
+                  class="{{ itemExpanded.class }}"
+                >
+                  {{ itemExpanded.title }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+</ng-container>
+  </tbody>
+</table>

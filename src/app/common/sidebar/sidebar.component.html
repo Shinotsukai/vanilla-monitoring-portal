@@ -1,0 +1,22 @@
+<aside class="aside is-placed-left is-expanded">
+    <!-- Logo -->
+
+    <!-- Main Nav Section -->
+    <div class="menu-container">
+        <div class="menu is-menu-main">
+
+            <ul class="menu-list">
+                <li *ngFor="let item of sideBarData">
+                    <p class="menu-label">{{item.heading}}</p>
+                    <a class="has-icon" [routerLink]="item.routerLink" routerLinkActive="is-active" >
+                        <span class="icon"><i class="fad" [class]="item.linkIcon"></i></span>
+                        <span class="menu-item-label">{{item.linkTitle}}</span>
+                    </a>
+                </li>
+
+      
+            </ul>
+        </div>
+    </div>
+    <!-- Footer -->
+</aside>

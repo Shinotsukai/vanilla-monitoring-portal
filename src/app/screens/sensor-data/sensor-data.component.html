@@ -1,0 +1,88 @@
+<section class="is-main-section section">
+
+    <!-- Display mode -->
+    <div class="level">
+        <div class="level-left"></div>
+        <div class="level-right">
+            <div class="level-item">
+                <a target="_blank" class="button is is-primary" (click)="kioskMode()">Kiosk Mode</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top section -->
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <div class="tile is-child">
+            <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+            </div>
+            </div>
+    
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+                </div>
+                </div>
+    
+                <div class="tile is-parent">
+                    <div class="tile is-child">
+                    <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+                    </div>
+                    </div>
+    
+                    <div class="tile is-parent">
+                        <div class="tile is-child">
+                        <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+                        </div>
+                        </div>
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Main graph -->
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-vertical">
+            <div class="is-child mb-4">
+                <app-card-tile>
+                    <app-chart [chartValues]="testVals" [chartType]="chartType"></app-chart>
+                    <div class="level">
+                        <div class="level-item"><div class="button" (click)="newTestData()">Temperature</div></div>
+                        <div class="level-item"><div class="button">Humidity</div></div>
+                        <div class="level-item"><div class="button">Pressure</div></div>
+                        <div class="level-item"><div class="button">TVOC</div></div>
+                        <div class="level-item"><div class="button">CO2</div></div>
+                    </div>
+                </app-card-tile>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-6 is-parent is-vertical">
+            <div class=" is-child">
+                <app-card-tile [cardTitle]="'Notifications'">
+                    <app-list-container>
+                        <app-list-item [title]="'01/01/2021'" [message]="'Sensor approaching limit'" [info]="'warning'" [infoColor]="'is-warning'"></app-list-item>
+                        <app-list-item [title]="'01/01/2021'" [message]="'Sensor exceeded limits'" [info]="'urgent'" [infoColor]="'is-danger'"></app-list-item>
+                      </app-list-container>
+                </app-card-tile>
+            </div>
+        </div>
+
+        <div class="tile is-6 is-parent is-vertical">
+            <div class=" is-child">
+                <app-card-tile [cardTitle]="'Notifications'">
+                    <app-list-container>
+                        <app-list-item [title]="'01/01/2021'" [message]="'Sensor approaching limit'" [info]="'warning'" [infoColor]="'is-warning'"></app-list-item>
+                        <app-list-item [title]="'01/01/2021'" [message]="'Sensor exceeded limits'" [info]="'urgent'" [infoColor]="'is-danger'"></app-list-item>
+                      </app-list-container>
+                </app-card-tile>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+
+
+aside.aside {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    padding: 0;
+    box-shadow: none;
+}
+
+.menu-container{
+    flex: 1;
+    position: relative;
+}
+
+aside.aside .menu-label{
+    padding: 0.75rem 0.75rem 0 0.75rem ;
+}
+
+.icon {
+    width: 3rem;
+}
+
+.menu-list a {color:#def2f1 ;}
+
+.menu-list a:hover {color:#17252a ;}

@@ -1,0 +1,12 @@
+<div class="field mb-4">
+    <div class="control">
+      <input
+       class="input is-large"
+       [id]="inputId"
+       [placeholder]="placeholder"
+       [type]="inputType"
+       [(ngModel)]="inputModel"
+       (ngModelChange)="inputModelChange.emit(inputModel)"
+       autofocus="">
+    </div>
+  </div>

@@ -1,0 +1,82 @@
+<!-- Hero section -->
+
+<app-hero-section>
+  <div>
+    <h1 class="title is-spaced">Howdy, <b>John Doe</b></h1>
+    <h3 class="subtitle mb-5">
+      Last login <b>12 mins ago</b> from <b>192.168.1.1</b>
+    </h3>
+    <p>You have <b>6 tasks</b> due today and <b>84 notifications</b></p>
+  </div>
+</app-hero-section>
+
+<section class="section is-main-section">
+
+    <!-- Top Cards -->
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <div class="tile is-child">
+        <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+        </div>
+        </div>
+
+        <div class="tile is-parent">
+            <div class="tile is-child">
+            <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+            </div>
+            </div>
+
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+                </div>
+                </div>
+
+                <div class="tile is-parent">
+                    <div class="tile is-child">
+                    <app-top-card [noShadow]="true" [cardTitle]="'Metric'" [cardValue]="'420'" [cardIcon]="'fad fa-router'" [iconColor]="'has-text-info'"></app-top-card>
+                    </div>
+                    </div>
+
+
+
+
+
+</div>
+
+<!-- Graphs -->
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent is-6">
+        <div class="tile is-child">
+        <app-card-tile [noShadow]="true" [showFooter]="false" [cardTitle]="'Card Title'" >
+
+          <app-list-container>
+            <app-list-item [title]="'test'" [message]="'Message Test'" [showRight]="false"></app-list-item>
+            <app-list-item [title]="'test'" [message]="'Message Test'" [showRight]="true"></app-list-item>
+            <app-list-item [title]="'test'" [message]="'Message Test'" [info]="'warning'" [infoColor]="'is-warning'"></app-list-item>
+            <app-list-item [title]="'test'" [message]="'Message Test'" [info]="'urgent'" [infoColor]="'is-danger'"></app-list-item>
+          </app-list-container>
+        </app-card-tile>
+    </div>
+    </div>
+</div>
+<!-- Table Test -->
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+      <div class="tile is-child">
+      <app-card-tile [cardTitle]="'Card Title'" [noShadow]="true" [showFooter]="false" >
+        <app-datatable [dataSource]="testData" [rowButtons]="buttonTest" ></app-datatable>
+      </app-card-tile>
+  </div>
+  </div>
+
+
+</div>
+
+
+
+
+</section>
+

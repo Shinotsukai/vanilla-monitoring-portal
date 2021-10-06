@@ -1,0 +1,40 @@
+<!-- 
+{{dataSource | json}} -->
+
+<div class="level">
+    <div class="level-left"  *ngIf="dataSource;else noData">
+
+
+        <div class="level-item" *ngFor="let item of gridMap">
+<div class="level has-text-centered">
+    <div class="level-left">
+        <div class="level-item">
+            <article>
+            <i class="fad is-size-1" [ngClass]="iconType(item.measure)"></i>
+            <br>
+            <div>{{item.measure}}</div>
+        </article>
+        </div>
+        <div class="level-item">
+            <article>
+                <strong class="is-size-3">12.0</strong>
+                <br>
+                <div>{{item.sensor_id | uomFormat:item.sensor_id}}</div>
+            </article>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <ng-template #noData>
+        <div class="level-left has-text-centered">
+            <div class="level-item is-size-4 has-text-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="level-item">
+                No Data Available!
+            </div>
+        </div>
+    </ng-template>
+</div>

@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+--fa-primary-color: #3aafa9;
+--fa-secondary-color: #2b7a78;
+}
+
+.no-shadow{
+    box-shadow: none!important;
+    border: 1px solid rgba(24,28,33,.06);
+}
+
+.no-shadow-header{
+    box-shadow: none!important;
+    border-bottom: 1px solid rgba(24,28,33,.06);
+}

@@ -1,0 +1,19 @@
+<section class="section is-main-section">
+
+    <div class="level">
+        <div class="level-left">
+
+        </div>
+        <div class="level-right">
+            <div class="level-item">
+                <div class="button is-primary">Add Device</div>
+            </div>
+        </div>
+    </div>
+
+<p *ngIf="dummyDevices.length">
+    <app-datatable [dataSource]="dummyDevices" [rowButtons]="rowButtons" [settings]="tableSettings" ></app-datatable>
+</p>
+
+</section>
+<app-modal [show]="showModal" title="Modal Test" (closed)="showModal = !showModal" [showFooter]="true"></app-modal>

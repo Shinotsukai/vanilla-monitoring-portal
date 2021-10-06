@@ -1,0 +1,9 @@
+section.hero.is-hero-bar.is-main-hero img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+section.is-main-section{
+    padding: 1.5rem;
+}

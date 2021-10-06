@@ -1,0 +1,33 @@
+<div class="card" [ngClass]="{'no-shadow': noShadow}">
+  <div class="card-image" *ngIf="showImage">
+    <figure class="image is-4by3">
+      <img [src]="cardImage" alt="Placeholder image">
+    </figure>
+  </div>
+    <header class="card-header" [ngClass]="{'no-shadow-header': noShadow}" *ngIf="showTitle">
+
+
+      <p class="card-header-title">
+        <span class="icon">
+          <i class="fad fa-users"></i>
+        </span>
+        {{cardTitle}}
+      </p>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fad fa-sync"></i>
+        </span>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <ng-content ></ng-content>
+        
+      </div>
+    </div>
+    <footer class="card-footer" *ngIf="showFooter">
+
+      <div class="card-footer-item" [class]="item.style"  *ngFor="let item of footerButtons; index as buttonIndex" (click)="cardFooterButton(buttonIndex)">{{item.title}}</div>
+
+    </footer>
+  </div>

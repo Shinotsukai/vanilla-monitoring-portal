@@ -1,0 +1,30 @@
+<div class="level mb-4 ">
+<div class="level-left">
+    <div class="level-item is-size-3">
+        <i class="fad fa-user-ninja"></i>
+    </div>
+    <div class="level-item">
+        <article>
+            <strong>{{title}}</strong><br>
+            <div>{{message}}</div>
+        </article>
+
+    </div>
+</div>
+
+
+
+<div class="level-right" *ngIf="showRight">
+    <div class="level-item" *ngIf="!info;else infoMessage">
+        <i class="fad fa-chevron-right is-size-4"></i>
+    </div>
+
+    <ng-template #infoMessage>
+        <div class="level-item">
+            <span class="tag" [class]="infoColor">
+                {{info}}
+            </span>
+        </div>
+    </ng-template>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="hero is-fullheight is-primary">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-8 is-offset-2">
+                <h3 class="title has-text-white">Login</h3>
+                <hr class="login-hr">
+                <p class="subtitle has-text-white">
+                    Please login below to access the portal
+                </p>
+
+                <app-card-tile [showTitle]="false" [footerButtons]="footerConfig" [showImage]="true" [cardImage]="'https://picsum.photos/id/10/500/500'" [showFooter]="true" (onButtonClick)='submitForm($event)'>
+                    <app-input-field [inputName]="'Email'" [inputType]="'email'" [placeholder]="'Email'" [(inputModel)]="email"></app-input-field>
+                    <app-input-field [inputName]="'Password'" [inputType]="'password'" [placeholder]="'Password'" [(inputModel)]="password"></app-input-field>
+
+
+                      <label class="checkbox" style="margin: 20px;">
+                        <input type="checkbox">
+                          Remember me
+                      </label>
+                </app-card-tile>
+            </div>
+        </div>
+    </div>
+</div>

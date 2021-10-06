@@ -1,0 +1,77 @@
+<div [@fadeInOut]="pageLoad">
+<section class="section is-main-section">
+
+<div class="level">
+    <div class="level-left">
+        <div class="level-item">
+            Selected Room: 
+        </div>
+
+        <div class="level-item">
+            <div class="dropdown" [ngClass]="{'is-active': selectActive}" >
+                <div class="dropdown-trigger" >
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" (click)="onDropClick()">
+                    <span>{{selectedRoom}}</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" (click)="onSelectRoom('All Rooms')">
+                      All Rooms
+                    </a>
+                    <a class="dropdown-item" *ngFor="let rig of dropList" (click)="onSelectRoom(rig.location)">
+                      {{rig.location}}
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sensors -->
+
+<div *ngFor="let rig of rigList" class="mb-4">
+<div  *ngIf="rig.slots.length">
+  <p class="is-size-3">{{rig.name}}</p>
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent is-vertical">
+        <div class="tile is-child" *ngFor="let slot of rig.slots">
+          <!-- <div class="tags" *ngFor="let type of deviceData | slotData:slot.device_name">
+
+              <span *ngFor="let item of type.sensors" class="tag is-rounded is-info">{{item.sensorType}}</span>
+
+          </div> -->
+        <app-card-tile  [cardTitle]="slot.device_name" [noShadow]="true" [showFooter]="false" >
+          <div class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <app-sensor-grid *ngFor="let sensor of sensorData | slotData:slot.device_name" [dataSource]="sensor.payload_decoded"></app-sensor-grid>
+              </div>
+            </div>
+
+            <div class="level-right">
+              <div class="level-item">
+                  <button class="button is-primary" (click)="viewRecord(slot.device_name)">View</button>
+              </div>
+          </div>
+          </div>
+          
+        </app-card-tile>
+        
+    </div>
+
+
+    </div>
+</div>
+
+</div>
+</div>
+
+</section>
+</div>
